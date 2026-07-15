@@ -21,12 +21,6 @@ I completed the **Google IT Support Professional Certificate**, strengthening my
 * Contact information
 * Optimized for desktop and mobile devices
 
-## 🛠️ Built With
-
-* HTML5
-* CSS3
-* JavaScript
-
 ## 🎯 Purpose
 
 This website serves as my digital portfolio and online resume, highlighting my career, technical skills, and professional growth while providing a central place for recruiters and employers to learn more about me.
