@@ -267,7 +267,8 @@ ul{ margin:0; padding:0; list-style:none; }
 .tl-top{ display:flex; justify-content:space-between; align-items:baseline; gap: 16px; flex-wrap:wrap; }
 .tl-top h3{ font-size: 20px; font-weight: 600; }
 .tl-date{ font-family: var(--font-mono); font-size: 12.5px; color: var(--wire); white-space:nowrap; }
-.tl-sub{ font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); margin: 4px 0 12px; }
+.tl-sub,.tl-note{ font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); margin: 4px 0 12px; }
+.tl-note{ font-style:italic }
 .tl-content ul{ display:flex; flex-direction:column; gap: 8px; max-width: 68ch; }
 .tl-content li{ color: var(--ink-soft); padding-left: 16px; position:relative; }
 .tl-content li::before{
