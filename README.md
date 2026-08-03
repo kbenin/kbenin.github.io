@@ -7,6 +7,7 @@ Kenn Benin's portfolio site — Front-End & WordPress Developer / AI Automation.
 1. Create a new repository on GitHub named exactly **`kbenin.github.io`** (this exact name is what makes it your root user site).
 2. Upload these files to the root of that repository (not inside a subfolder):
    - `index.html`
+   - `portfolio.html`
    - `style.css`
    - `script.js`
    - `assets/Kenn-Benin-Resume.pdf`
