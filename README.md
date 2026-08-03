@@ -1,27 +1,38 @@
-# kbenin.github.io
+# 🌐 Personal Portfolio Website
 
-Kenn Benin's portfolio site — Front-End & WordPress Developer / AI Automation.
+Welcome to my personal portfolio website! This project showcases my professional background, technical skills, certifications, and career journey in Information Technology and Web Development.
 
-## Deploy to GitHub Pages (kbenin.github.io)
+The portfolio was built to ser**v**e as my online resume and professional profile, making it easy for recruiters, hiring managers, and potential clients to learn more about my experience and the work I do.
 
-1. Create a new repository on GitHub named exactly **`kbenin.github.io`** (this exact name is what makes it your root user site).
-2. Upload these files to the root of that repository (not inside a subfolder):
-   - `index.html`
-   - `style.css`
-   - `script.js`
-   - `assets/Kenn-Benin-Resume.pdf`
-3. Commit and push (or drag-and-drop upload via the GitHub web UI).
-4. In the repo, go to **Settings → Pages**, and under "Build and deployment" set **Source: Deploy from a branch**, branch: `main`, folder: `/ (root)`. Save.
-5. Wait 1–2 minutes, then visit **https://kbenin.github.io** — it should be live.
+## 👨‍💻 About Me
 
-## Editing content later
+I'm **Kenn Rejoso Benin**, an IT professional with experience in **IT Support, Technical Support, and WordPress Development**. I enjoy solving technical problems, building reliable web solutions, and continuously learning new technologies to expand my expertise.
 
-- All text lives directly in `index.html` — search for the section you want (`id="about"`, `id="experience"`, etc.) and edit the text between the tags.
-- Colors, fonts, and spacing live in `style.css` under the `:root` token list at the top.
-- To swap the downloadable resume, replace `assets/Kenn-Benin-Resume.pdf` with a new file of the same name (or update the `href` in `index.html`).
+I completed the **Google IT Support Professional Certificate**, strengthening my knowledge in troubleshooting, networking, operating systems, system administration, and IT security fundamentals.
 
-## Notes / things to double check
+## 🚀 Features
 
-- The GitHub link in the Contact section points to `https://github.com/kbenin` — update it in `index.html` if your actual GitHub username is different.
-- Your résumé lists **XDNA Digital Agency** as *Jul 2022 – Mar 2024* and **CyberOptik** as *Oct 2023 – Jul 2024* — these two ranges overlap by about 9 months. Worth double-checking the real dates before this goes live, since an overlap like that is the kind of thing a recruiter will ask about.
-- Your two resumes also disagree on when your current freelance work started: the Dev resume says *July 2024*, the IT resume says *March 2024*. The site currently uses July 2024 — update it in `index.html` (search "Jul 2024 &mdash; Present") if March is correct.
+* Responsive and modern design
+* Professional career overview
+* Skills and technology showcase
+* Work experience timeline
+* Certifications section
+* Project portfolio
+* Contact information
+* Optimized for desktop and mobile devices
+
+## 🛠️ Built With
+
+* HTML5
+* CSS3
+* JavaScript
+
+## 🎯 Purpose
+
+This website serves as my digital portfolio and online resume, highlighting my career, technical skills, and professional growth while providing a central place for recruiters and employers to learn more about me.
+
+## 📫 Connect With Me
+
+If you'd like to discuss opportunities, collaborate on a project, or simply connect, feel free to reach out through the contact information available on my portfolio website.
+
+Thank you for visiting my repository!
