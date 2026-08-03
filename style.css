@@ -315,6 +315,27 @@ ul{ margin:0; padding:0; list-style:none; }
 .edu-item p{ color: var(--ink-soft); margin: 0 0 4px; }
 
 /* ===========================================================
+   Testimonials
+=========================================================== */
+.testimonial-grid{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--line); border: 1px solid var(--line); margin-top: 44px;
+}
+.testimonial-card{ background: var(--paper); padding: 28px; display:flex; flex-direction:column; }
+.testimonial-card blockquote{
+  margin: 0 0 18px; color: var(--ink-soft); font-size: 14.5px; line-height: 1.6;
+}
+.testimonial-card blockquote::before{
+  content:"\201C"; display:block; margin-bottom: 6px;
+  font-family: var(--font-display); font-size: 30px; line-height: 1; color: var(--signal);
+}
+.testimonial-card figcaption{ margin-top: auto; }
+.testimonial-name{ display:block; font-weight: 600; font-size: 14px; }
+.testimonial-role{
+  display:block; font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft); margin-top: 2px;
+}
+
+/* ===========================================================
    Contact
 =========================================================== */
 .contact-wrap{ text-align:center; }
@@ -352,6 +373,7 @@ ul{ margin:0; padding:0; list-style:none; }
   .stack-grid{ grid-template-columns: repeat(2,1fr); }
   .project-grid{ grid-template-columns: 1fr; }
   .highlight-grid{ grid-template-columns: 1fr; gap: 28px; }
+  .testimonial-grid{ grid-template-columns: repeat(2,1fr); }
   .edu-row{ grid-template-columns: 1fr; gap: 24px; }
 }
 
@@ -360,6 +382,7 @@ ul{ margin:0; padding:0; list-style:none; }
   .header-cta{ display:none; }
   .nav-toggle{ display:flex; margin-left:auto; }
   .stack-grid{ grid-template-columns: 1fr; }
+  .testimonial-grid{ grid-template-columns: 1fr; }
   .site-header.nav-open .main-nav{
     display:flex; position:absolute; top:64px; left:0; right:0;
     background: var(--paper); flex-direction:column; padding: 18px 28px; gap:16px;
