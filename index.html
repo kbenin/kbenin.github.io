@@ -3,247 +3,458 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kenn Benin — Front-End Developer</title>
-<meta name="description" content="Kenn Rejoso Benin — Front-End Developer specializing in WordPress, pixel-perfect UI, and responsive web builds. 5+ years, 50+ sites shipped.">
+<title>Kenn Benin — Web Developer, IT Support &amp; AI Automation</title>
+<meta name="description" content="Kenn Rejoso Benin — Front-End &amp; WordPress Developer with 5+ years of experience, plus IT Support and infrastructure background, building AI-powered automation with n8n, Ollama, and local LLMs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Cursor / canvas HUD -->
-  <div class="hud" id="hud" aria-hidden="true">
-    <span class="hud-x">X <b id="hudX">000</b></span>
-    <span class="hud-sep">/</span>
-    <span class="hud-y">Y <b id="hudY">000</b></span>
-  </div>
+<div class="grain" aria-hidden="true"></div>
 
-  <!-- Top ruler -->
-  <div class="ruler ruler--top" aria-hidden="true"></div>
-  <!-- Left ruler with scroll marker -->
-  <div class="ruler ruler--left" aria-hidden="true">
-    <div class="ruler-marker" id="rulerMarker"></div>
-  </div>
-
-  <header class="nav" id="nav">
-    <a href="#top" class="nav-mark">KB<span>.</span></a>
-    <nav class="nav-links">
-      <a href="#work">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#certs">Certifications</a>
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">KB<span class="brand-dot">.</span></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="#about">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#experience">Experience</a>
+      <a href="#automation">Automation</a>
+      <a href="#it-support">IT Support</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="nav-cta">Let's talk</a>
-  </header>
+    <a class="btn btn-ghost header-cta" href="assets/Kenn-Benin-Resume.pdf" download>Resume</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-  <main id="top">
+<main>
 
-    <!-- FRAME 01 — HERO -->
-    <section class="frame hero" data-frame="01" data-name="Hero" data-dim="1440 × 900">
-      <div class="frame-tag"><span class="dot"></span>FRAME 01 — HERO — 1440×900</div>
-      <div class="hero-inner">
-        <p class="eyebrow">Front-End Developer · Cavite, Philippines</p>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Cavite, Philippines &mdash; Open to remote roles</p>
         <h1 class="hero-title">
-          I turn Figma files<br>
-          into <span class="accent">pixel-perfect</span><br>
-          shipped websites.
+          Kenn Rejoso Benin
         </h1>
-        <p class="hero-sub">
-          5+ years building responsive, high-performing websites in WordPress, HTML, CSS,
-          and JavaScript — and lately, cutting my teeth on networking and IT support.
-        </p>
+        <p class="hero-role">Web Developer &amp; IT Support professional<br>wiring in AI‑powered automation.</p>
+        <p class="hero-desc">5+ years building responsive websites and custom WordPress themes, backed by hands-on IT support, networking, and Windows Server experience &mdash; now connecting all of it to local LLMs, n8n workflows, and CRM automation.</p>
         <div class="hero-actions">
-          <a href="#work" class="btn btn-primary">View experience</a>
-          <a href="mailto:kbenin24@gmail.com" class="btn btn-ghost">Get in touch</a>
+          <a href="#experience" class="btn btn-primary">See the experience</a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
         </div>
       </div>
-      <div class="stat-strip">
-        <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years shipping</span></div>
-        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Websites launched</span></div>
-        <div class="stat"><span class="stat-num">5</span><span class="stat-label">Teams worked with</span></div>
-        <div class="stat"><span class="stat-num">N10-009</span><span class="stat-label">Network+ trained</span></div>
+
+      <div class="hero-diagram" aria-hidden="true">
+        <svg viewBox="0 0 480 420" class="node-map">
+          <!-- connecting wires -->
+          <path class="wire" d="M240,210 C180,170 140,130 108,92" />
+          <path class="wire" d="M240,210 C300,170 340,130 372,92" />
+          <path class="wire" d="M240,210 C180,250 140,290 108,328" />
+          <path class="wire" d="M240,210 C300,250 340,290 372,328" />
+          <path class="wire wire-alt" d="M108,92 C220,40 260,40 372,92" />
+          <path class="wire wire-alt" d="M108,328 C220,380 260,380 372,328" />
+
+          <!-- center node -->
+          <g class="node node-center">
+            <circle cx="240" cy="210" r="32"/>
+            <text x="240" y="215" text-anchor="middle">KB</text>
+          </g>
+
+          <!-- WordPress node -->
+          <g class="node">
+            <circle cx="108" cy="92" r="24"/>
+            <text x="108" y="97" text-anchor="middle">WP</text>
+          </g>
+          <text x="108" y="55" text-anchor="middle" class="node-label">WordPress</text>
+
+          <!-- Frontend node -->
+          <g class="node">
+            <circle cx="372" cy="92" r="24"/>
+            <text x="372" y="97" text-anchor="middle">FE</text>
+          </g>
+          <text x="372" y="55" text-anchor="middle" class="node-label">Front‑End</text>
+
+          <!-- IT Support node -->
+          <g class="node">
+            <circle cx="108" cy="328" r="24"/>
+            <text x="108" y="333" text-anchor="middle">IT</text>
+          </g>
+          <text x="108" y="368" text-anchor="middle" class="node-label">IT Support</text>
+
+          <!-- AI node -->
+          <g class="node node-accent">
+            <circle cx="372" cy="328" r="24"/>
+            <text x="372" y="333" text-anchor="middle">AI</text>
+          </g>
+          <text x="372" y="368" text-anchor="middle" class="node-label">Automation</text>
+        </svg>
       </div>
-    </section>
+    </div>
 
-    <!-- FRAME 02 — ABOUT -->
-    <section class="frame about" data-frame="02" data-name="About">
-      <div class="frame-tag"><span class="dot"></span>FRAME 02 — ABOUT</div>
-      <div class="about-grid">
-        <h2 class="section-title">Summary</h2>
-        <p class="about-text">
-          I'm a front-end developer who's spent the last five years translating UI/UX
-          designs into interfaces that hold up in the browser — pixel by pixel, breakpoint
-          by breakpoint. Most of my work lives in WordPress: custom themes, Elementor
-          builds, WooCommerce stores, and the PHP underneath them. I've shipped 50+ sites
-          across agencies and freelance clients, and I care as much about load time and
-          cross-browser quirks as I do about matching the mockup exactly.
-          <br><br>
-          More recently, I completed hands-on CompTIA Network+ (N10-009) training and the
-          Google IT Support Professional Certificate — extending what I do beyond the
-          browser into networking, hardware, and end-user support.
-        </p>
+    <div class="stat-strip">
+      <div class="wrap stat-grid">
+        <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years web development</span></div>
+        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">WordPress sites shipped</span></div>
+        <div class="stat"><span class="stat-num">2</span><span class="stat-label">IT certifications</span></div>
+        <div class="stat"><span class="stat-num">4</span><span class="stat-label">AI automation systems built</span></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FRAME 03 — SKILLS -->
-    <section class="frame skills" id="skills" data-frame="03" data-name="Skills">
-      <div class="frame-tag"><span class="dot"></span>FRAME 03 — SKILLS</div>
-      <h2 class="section-title">Toolkit</h2>
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <h3><span class="skill-index">01</span>Front-End</h3>
-          <ul class="tag-list">
-            <li>HTML5</li><li>CSS3</li><li>SCSS/SASS</li><li>JavaScript (ES6+)</li>
-            <li>jQuery</li><li>Bootstrap</li><li>Tailwind CSS</li>
-            <li>Responsive Design</li><li>Accessibility</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <h3><span class="skill-index">02</span>CMS &amp; Platforms</h3>
-          <ul class="tag-list">
-            <li>WordPress</li><li>Elementor</li><li>WooCommerce</li><li>ACF</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <h3><span class="skill-index">03</span>Back-End &amp; Tools</h3>
-          <ul class="tag-list">
-            <li>PHP</li><li>Laravel</li><li>REST APIs</li><li>Git</li>
-            <li>GitHub</li><li>GitLab</li><li>cPanel</li><li>FTP</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <h3><span class="skill-index">04</span>Design Handoff</h3>
-          <ul class="tag-list">
-            <li>Figma</li><li>Adobe XD</li><li>Photoshop</li><li>Illustrator</li>
-          </ul>
-        </div>
-
-        <div class="skill-card skill-card--wide">
-          <h3><span class="skill-index">05</span>IT &amp; Networking <span class="badge-new">building now</span></h3>
-          <ul class="tag-list">
-            <li>IP / DNS / DHCP</li><li>Router &amp; switch config</li><li>Windows &amp; basic Linux</li>
-            <li>Cisco devices &amp; CLI</li><li>Kali Linux (intro)</li><li>Jira / Trello / Asana</li>
-            <li>CCTV install &amp; config</li><li>Hardware troubleshooting</li>
-          </ul>
-        </div>
-
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <p class="kicker">01 &mdash; About</p>
+        <h2>Ships production WordPress &amp; front‑end work, backed by real IT support and infrastructure experience.</h2>
       </div>
-    </section>
-
-    <!-- FRAME 04 — EXPERIENCE -->
-    <section class="frame work" id="work" data-frame="04" data-name="Experience">
-      <div class="frame-tag"><span class="dot"></span>FRAME 04 — EXPERIENCE</div>
-      <h2 class="section-title">Where I've worked</h2>
-
-      <ol class="timeline">
-        <li class="tl-item">
-          <div class="tl-meta"><span class="tl-index">01</span><span class="tl-date">Jul 2024 — Present</span></div>
-          <div class="tl-body">
-            <h3>Freelance Web Developer</h3>
-            <p>Custom WordPress sites end-to-end for direct clients — builds, fixes, performance
-            work, and cross-client email templates — plus hosting/DNS troubleshooting on the side.</p>
-          </div>
-        </li>
-        <li class="tl-item">
-          <div class="tl-meta"><span class="tl-index">02</span><span class="tl-date">Oct 2023 — Jul 2024</span></div>
-          <div class="tl-body">
-            <h3>Front-End Developer <span class="tl-org">· CyberOptik</span></h3>
-            <p>Built and maintained WordPress sites to brand spec, owned QA and cross-browser
-            testing, and optimized front-end code for speed and UX.</p>
-            <p class="tl-stack">HTML · CSS · SCSS · JavaScript · jQuery · WordPress · Elementor</p>
-          </div>
-        </li>
-        <li class="tl-item">
-          <div class="tl-meta"><span class="tl-index">03</span><span class="tl-date">Jul 2022 — Mar 2024</span></div>
-          <div class="tl-body">
-            <h3>Web Developer <span class="tl-org">· XDNA Digital Agency Inc.</span></h3>
-            <p>Custom WordPress themes and functionality in PHP and JS, converting Figma/XD/Photoshop
-            files into pixel-perfect pages, plus third-party API integrations and SEO/performance work.</p>
-            <p class="tl-stack">HTML · CSS · JavaScript · PHP · WordPress · ACF · Git</p>
-          </div>
-        </li>
-        <li class="tl-item">
-          <div class="tl-meta"><span class="tl-index">04</span><span class="tl-date">Nov 2021 — Jul 2022</span></div>
-          <div class="tl-body">
-            <h3>Front-End Developer <span class="tl-org">· Blink Digital</span></h3>
-            <p>Responsive builds from design mockups, custom WordPress themes, modern UI components,
-            and hands-on server setup and deployment.</p>
-            <p class="tl-stack">HTML · SCSS · JavaScript · WordPress · Git</p>
-          </div>
-        </li>
-        <li class="tl-item">
-          <div class="tl-meta"><span class="tl-index">05</span><span class="tl-date">Jun 2019 — Oct 2021</span></div>
-          <div class="tl-body">
-            <h3>Web Developer <span class="tl-org">· Sytian Productions</span></h3>
-            <p>WordPress sites and WooCommerce stores from Photoshop specs, custom functionality,
-            third-party integrations, and ongoing security and maintenance.</p>
-            <p class="tl-stack">HTML · CSS · JavaScript · PHP · WordPress · WooCommerce</p>
-          </div>
-        </li>
-        <li class="tl-item">
-          <div class="tl-meta"><span class="tl-index">06</span><span class="tl-date">2017 — 2019</span></div>
-          <div class="tl-body">
-            <h3>IT Support Technician <span class="tl-org">· Yaramay Computer Maintenance and Services</span></h3>
-            <p>On-site IT support for offices and small businesses — hardware/software/printer
-            troubleshooting, CCTV installs, network setups, and IT procurement.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <!-- FRAME 05 — CERTIFICATIONS -->
-    <section class="frame certs" id="certs" data-frame="05" data-name="Certifications">
-      <div class="frame-tag"><span class="dot"></span>FRAME 05 — CERTIFICATIONS</div>
-      <h2 class="section-title">Certifications &amp; training</h2>
-      <div class="cert-grid">
-        <div class="cert-card">
-          <p class="cert-issuer">RivanCyber Training Institute Inc.</p>
-          <h3>CompTIA Network+ (N10-009) — Professional Training</h3>
-          <p>Hands-on training toward entry-level Network Support Engineer (L1) work: Cisco
-          device configuration, CLI tools, VM management, and a locally hosted networked web
-          server across multiple machines.</p>
-        </div>
-        <div class="cert-card">
-          <p class="cert-issuer">Google</p>
-          <h3>Google IT Support Professional Certificate</h3>
-          <p>Five-course program covering troubleshooting, customer service, networking,
-          operating systems, system administration, and security.</p>
-          <p class="cert-id">Completed July 2026 · Credential ID OTZHR9DSV0VZ</p>
+      <div class="section-body">
+        <p>I'm a front-end developer with over five years of experience designing, building, and maintaining responsive websites and web applications &mdash; HTML5, CSS3, JavaScript, PHP, and WordPress at the core. I've converted UI/UX designs from Figma, Adobe XD, and Photoshop into pixel-perfect, cross-browser interfaces, and customized themes, plugins, and WooCommerce stores for clients across digital agencies and freelance engagements.</p>
+        <p>My career actually started in IT support &mdash; on-site troubleshooting, networking, and CCTV installation &mdash; and that thread never really went away. Years of resolving hosting, DNS, SSL, and server issues for web clients kept me close to infrastructure, and I've since built on it with the Google IT Support Professional Certificate, CompTIA Network+ training, and a Windows Server home lab covering Active Directory, DNS, DHCP, and Group Policy.</p>
+        <p>More recently I've been building AI-powered automation on the side: local LLM environments with Docker and Ollama, event-driven workflows in n8n, Telegram-connected AI agents, and CRM automation across GoHighLevel, Gravity Forms, Zapier, and webhooks. I like the problems that sit at the seam between a website, the infrastructure behind it, and the systems that automate it.</p>
+        <div class="about-meta">
+          <a href="mailto:kbenin24@gmail.com">kbenin24@gmail.com</a>
+          <a href="tel:+639691372675">+63 969 137 2675</a>
+          <a href="https://linkedin.com/in/kbenin24/" target="_blank" rel="noopener">linkedin.com/in/kbenin24</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FRAME 06 — CONTACT -->
-    <section class="frame contact" id="contact" data-frame="06" data-name="Contact">
-      <div class="frame-tag"><span class="dot"></span>FRAME 06 — CONTACT</div>
-      <h2 class="contact-title">Have a site to build,<br>or a network to figure out?</h2>
+  <!-- STACK -->
+  <section class="section section-alt" id="stack">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">02 &mdash; Stack</p>
+        <h2>Tools, in the order I reach for them.</h2>
+      </div>
+
+      <div class="stack-grid">
+        <div class="stack-card">
+          <h3><span class="stack-index">01</span>Languages</h3>
+          <ul class="tag-list">
+            <li>HTML5</li><li>CSS3</li><li>SCSS / SASS</li><li>JavaScript (ES6+)</li><li>jQuery</li><li>PHP</li><li>Python</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3><span class="stack-index">02</span>Front-End</h3>
+          <ul class="tag-list">
+            <li>Responsive Web Design</li><li>Bootstrap</li><li>Tailwind CSS</li><li>Cross-Browser Compatibility</li><li>Web Accessibility</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3><span class="stack-index">03</span>WordPress</h3>
+          <ul class="tag-list">
+            <li>Custom Theme Dev</li><li>Elementor</li><li>WooCommerce</li><li>Advanced Custom Fields</li><li>Gravity Forms</li>
+          </ul>
+        </div>
+        <div class="stack-card stack-card-accent">
+          <h3><span class="stack-index">04</span>AI &amp; Automation</h3>
+          <ul class="tag-list">
+            <li>Docker</li><li>Ollama</li><li>Llama 3.2</li><li>n8n</li><li>AI Agents</li><li>Prompt Engineering</li><li>Local LLMs</li><li>Telegram Bots</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3><span class="stack-index">05</span>CRM &amp; Integrations</h3>
+          <ul class="tag-list">
+            <li>GoHighLevel</li><li>Zapier</li><li>Webhooks</li><li>REST APIs</li><li>CRM Automation</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3><span class="stack-index">06</span>Tools &amp; Design</h3>
+          <ul class="tag-list">
+            <li>Git / GitHub / GitLab</li><li>cPanel / FTP</li><li>Figma</li><li>Adobe XD</li><li>Photoshop</li><li>Illustrator</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">03 &mdash; Experience</p>
+        <h2>Five years across agencies, freelance, and direct clients.</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-marker"><span></span></div>
+          <div class="tl-content">
+            <div class="tl-top">
+              <h3>Freelance Web Developer</h3>
+              <span class="tl-date">Jul 2024 &mdash; Present</span>
+            </div>
+            <p class="tl-sub">Self-Employed</p>
+            <ul>
+              <li>Develop and maintain custom WordPress websites using HTML, CSS, JavaScript, and PHP.</li>
+              <li>Build responsive interfaces for desktop, tablet, and mobile.</li>
+              <li>Develop responsive HTML email templates compatible across major email clients.</li>
+              <li>Research and implement AI-powered tools and workflow automation to improve client productivity.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"><span></span></div>
+          <div class="tl-content">
+            <div class="tl-top">
+              <h3>Front-End Developer</h3>
+              <span class="tl-date">Oct 2023 &mdash; Jul 2024</span>
+            </div>
+            <p class="tl-sub">CyberOptik</p>
+            <ul>
+              <li>Developed and maintained WordPress websites following client branding guidelines.</li>
+              <li>Customized templates, ensured responsive design and cross-browser compatibility.</li>
+              <li>Performed QA testing, resolved front-end issues, and improved performance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"><span></span></div>
+          <div class="tl-content">
+            <div class="tl-top">
+              <h3>Web Developer</h3>
+              <span class="tl-date">Jul 2022 &mdash; Mar 2024</span>
+            </div>
+            <p class="tl-sub">XDNA Digital Agency Inc.</p>
+            <ul>
+              <li>Developed custom WordPress themes and functionality using PHP and JavaScript.</li>
+              <li>Converted Figma, Adobe XD, and Photoshop designs into responsive websites.</li>
+              <li>Integrated third-party APIs and optimized sites for SEO, responsiveness, and performance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"><span></span></div>
+          <div class="tl-content">
+            <div class="tl-top">
+              <h3>Front-End Developer</h3>
+              <span class="tl-date">Nov 2021 &mdash; Jul 2022</span>
+            </div>
+            <p class="tl-sub">Blink Digital</p>
+            <ul>
+              <li>Built responsive websites using HTML, SCSS, JavaScript, and WordPress.</li>
+              <li>Developed custom WordPress themes from design mockups and reusable UI components.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"><span></span></div>
+          <div class="tl-content">
+            <div class="tl-top">
+              <h3>Web Developer</h3>
+              <span class="tl-date">Jun 2019 &mdash; Oct 2021</span>
+            </div>
+            <p class="tl-sub">Sytian Productions</p>
+            <ul>
+              <li>Developed WordPress websites and WooCommerce stores.</li>
+              <li>Created responsive interfaces from Photoshop and UI mockups.</li>
+              <li>Maintained website security, updates, and enhancements.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"><span></span></div>
+          <div class="tl-content">
+            <div class="tl-top">
+              <h3>IT Support Technician</h3>
+              <span class="tl-date">2017 &mdash; 2019</span>
+            </div>
+            <p class="tl-sub">Yaramay Computer Maintenance and Services</p>
+            <ul>
+              <li>Delivered on-site IT support for office users and small businesses.</li>
+              <li>Installed, configured, and maintained desktop computers, printers, and CCTV systems.</li>
+              <li>Diagnosed and repaired hardware, software, and networking issues; configured routers and local area networks.</li>
+              <li>Coordinated hardware procurement, vendor support, and preventive maintenance.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AI & AUTOMATION -->
+  <section class="section section-dark" id="automation">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker kicker-light">04 &mdash; AI &amp; Automation</p>
+        <h2 class="light">Where WordPress work meets local AI and workflow systems.</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <p class="project-tag">n8n &middot; Ollama &middot; Webhooks</p>
+          <h3>AI Workflow Automation</h3>
+          <p>Designed event-driven workflows in n8n, integrating locally-run Ollama with Llama&nbsp;3.2 for inference. Connected applications via REST APIs and webhooks to automate prompt processing and task execution.</p>
+        </article>
+        <article class="project-card">
+          <p class="project-tag">Telegram &middot; n8n &middot; Local LLM</p>
+          <h3>Real-Time AI Assistant</h3>
+          <p>Built a real-time assistant linking Telegram, n8n, and a desktop-hosted Llama&nbsp;3.2 model. Webhook-based messaging lets a mobile device talk to a locally-run AI agent in real time.</p>
+        </article>
+        <article class="project-card">
+          <p class="project-tag">GoHighLevel &middot; Zapier &middot; Forms</p>
+          <h3>CRM &amp; Workflow Automation</h3>
+          <p>Built GoHighLevel automations that connect Gravity Forms to the CRM via Zapier and webhooks &mdash; automating lead capture, CRM updates, and follow-ups, and cutting manual data entry between WordPress and the CRM.</p>
+        </article>
+        <article class="project-card">
+          <p class="project-tag">Docker &middot; Ollama &middot; Prompt Engineering</p>
+          <h3>Local AI Environment</h3>
+          <p>Stood up a local AI development environment with Docker and Ollama, configured Llama&nbsp;3.2 for offline inference, and worked through prompt engineering, model deployment, and agent orchestration.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- IT SUPPORT -->
+  <section class="section section-alt" id="it-support">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">05 &mdash; IT Support</p>
+        <h2>Networking, Windows Server, and hands-on infrastructure.</h2>
+      </div>
+
+      <div class="stack-grid">
+        <div class="stack-card">
+          <h3><span class="stack-index">01</span>Networking</h3>
+          <ul class="tag-list">
+            <li>TCP/IP</li><li>DNS</li><li>DHCP</li><li>LAN/WAN</li><li>Router &amp; Switch Config</li><li>Network Diagnostics</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3><span class="stack-index">02</span>Microsoft &amp; Windows</h3>
+          <ul class="tag-list">
+            <li>Windows Server 2022</li><li>Active Directory (AD DS)</li><li>Group Policy</li><li>Microsoft 365</li><li>NTFS Permissions</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3><span class="stack-index">03</span>Virtualization</h3>
+          <ul class="tag-list">
+            <li>VMware Workstation</li><li>Oracle VirtualBox</li><li>VM Deployment</li><li>Snapshot Management</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3><span class="stack-index">04</span>Support &amp; Tools</h3>
+          <ul class="tag-list">
+            <li>Help Desk &amp; Incident Mgmt</li><li>Jira</li><li>Trello</li><li>Asana</li><li>PowerShell</li><li>Command Prompt</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3><span class="stack-index">05</span>Security</h3>
+          <ul class="tag-list">
+            <li>CCTV Installation</li><li>Basic Cybersecurity</li><li>Kali Linux (intro)</li>
+          </ul>
+        </div>
+        <div class="stack-card stack-card-accent">
+          <h3><span class="stack-index">06</span>Certifications</h3>
+          <ul class="tag-list">
+            <li>Google IT Support Cert</li><li>CompTIA Network+ (N10-009)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lab-card">
+        <p class="project-tag">VMware &middot; Active Directory &middot; DNS/DHCP &middot; Group Policy</p>
+        <h3>Windows Server Home Lab</h3>
+        <p>Built and administered a Windows Server 2022 lab using VMware Workstation and Oracle VirtualBox: configured Active Directory Domain Services, created OUs, users, and security groups, set up DNS and DHCP for client connectivity, joined Windows clients to the domain, applied Group Policy Objects, configured shared folders with NTFS permissions, and administered Microsoft 365 accounts.</p>
+      </div>
+
+      <div class="edu-row">
+        <div class="edu-item">
+          <h4>Google IT Support Professional Certificate</h4>
+          <p>Google, via Coursera &mdash; completed July 2026</p>
+          <p>Five-course program covering troubleshooting, customer service, networking, operating systems, system administration, and security.</p>
+        </div>
+        <div class="edu-item">
+          <h4>CompTIA Network+ (N10-009) Training</h4>
+          <p>RivanCyber Training Institute Inc.</p>
+          <p>Hands-on training preparing for entry-level Network Support Engineer (L1) roles &mdash; Cisco routers/switches, TCP/IP troubleshooting, and virtual lab environments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="section" id="highlights">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">06 &mdash; Highlights</p>
+        <h2>What five years of shipping actually adds up to.</h2>
+      </div>
+      <div class="highlight-grid">
+        <div class="highlight">
+          <span class="highlight-num">50+</span>
+          <h3>WordPress sites</h3>
+          <p>Custom themes, Elementor builds, WooCommerce stores, and landing pages, optimized for speed, accessibility, and SEO.</p>
+        </div>
+        <div class="highlight">
+          <span class="highlight-num">HTML</span>
+          <h3>Email development</h3>
+          <p>Responsive HTML email templates built and tested for compatibility across major email clients and devices.</p>
+        </div>
+        <div class="highlight">
+          <span class="highlight-num">API</span>
+          <h3>Third-party integration</h3>
+          <p>REST API integrations into WordPress, with custom automation connecting sites to business workflows.</p>
+        </div>
+      </div>
+
+      <div class="edu-row">
+        <div class="edu-item">
+          <h4>Education</h4>
+          <p>B.S. in Information Technology &mdash; New England College, 2019</p>
+        </div>
+        <div class="edu-item">
+          <h4>Certifications</h4>
+          <p>Google IT Support Professional Certificate</p>
+          <p>CompTIA Network+ (N10-009) &mdash; in progress</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-dark" id="contact">
+    <div class="wrap contact-wrap">
+      <p class="kicker kicker-light">07 &mdash; Contact</p>
+      <h2 class="light contact-title">Have a role that needs a builder<br>who connects the pieces?</h2>
+      <p class="contact-sub">Open to Front-End, WordPress, IT Support, and AI Automation roles &mdash; remote-friendly.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:kbenin24@gmail.com">kbenin24@gmail.com</a>
+        <a class="btn btn-outline btn-outline-light" href="assets/Kenn-Benin-Resume.pdf" download>Download resume</a>
+      </div>
       <div class="contact-links">
-        <a href="mailto:kbenin24@gmail.com" class="contact-link">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">kbenin24@gmail.com</span>
-        </a>
-        <a href="tel:+639691372675" class="contact-link">
-          <span class="contact-label">Phone</span>
-          <span class="contact-value">+63 969 137 2675</span>
-        </a>
-        <a href="https://www.linkedin.com/in/kbenin24/" target="_blank" rel="noopener" class="contact-link">
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">in/kbenin24</span>
-        </a>
+        <a href="tel:+639691372675">+63 969 137 2675</a>
+        <a href="https://linkedin.com/in/kbenin24/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/kbenin" target="_blank" rel="noopener">GitHub</a>
+        <span>Cavite, Philippines</span>
       </div>
-      <footer class="footer">
-        <span>Kenn Rejoso Benin — Cavite, Philippines</span>
-        <span>BS Information Technology, New England College '19</span>
-      </footer>
-    </section>
+    </div>
+  </section>
 
-  </main>
+</main>
 
-  <script src="script.js"></script>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>&copy; 2026 Kenn Rejoso Benin.</span>
+    <span>Built &amp; deployed on GitHub Pages.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

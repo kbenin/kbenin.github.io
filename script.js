@@ -1,61 +1,44 @@
-// Live coordinate HUD — tracks cursor position, canvas-tool style
-(function () {
-  const hudX = document.getElementById('hudX');
-  const hudY = document.getElementById('hudY');
-  if (!hudX || !hudY) return;
+// Mobile nav toggle
+const header = document.querySelector('.site-header');
+const navToggle = document.getElementById('nav-toggle');
 
-  let ticking = false;
-  window.addEventListener('mousemove', (e) => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      hudX.textContent = String(e.clientX).padStart(3, '0');
-      hudY.textContent = String(e.clientY).padStart(3, '0');
-      ticking = false;
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = header.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.querySelectorAll('.main-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
   });
-})();
+}
 
-// Left ruler scroll marker — shows current scroll depth
-(function () {
-  const marker = document.getElementById('rulerMarker');
-  if (!marker) return;
+// Reveal-on-scroll for section headers and cards (respects reduced motion)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function updateMarker() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? scrollTop / docHeight : 0;
-    const rulerHeight = window.innerHeight;
-    marker.style.top = `${pct * (rulerHeight - 3)}px`;
-  }
-
-  window.addEventListener('scroll', () => requestAnimationFrame(updateMarker));
-  window.addEventListener('resize', updateMarker);
-  updateMarker();
-})();
-
-// Frame reveal on scroll
-(function () {
-  const frames = document.querySelectorAll('.frame');
-  if (!frames.length) return;
-
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) {
-    frames.forEach((f) => f.classList.add('is-visible'));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  const revealTargets = document.querySelectorAll(
+    '.stack-card, .project-card, .highlight, .tl-item, .section-head'
   );
 
-  frames.forEach((f) => observer.observe(f));
-})();
+  revealTargets.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(14px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  revealTargets.forEach(el => observer.observe(el));
+}
