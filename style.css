@@ -347,7 +347,7 @@ ul{ margin:0; padding:0; list-style:none; }
    Highlights
 =========================================================== */
 .highlight-grid{
-  display:grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 44px;
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 36px; margin-top: 44px;
 }
 .highlight-num{
   font-family: var(--font-mono); font-size: 13px; color: var(--signal-dim);

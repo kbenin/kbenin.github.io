@@ -1,6 +1,6 @@
 # kbenin.github.io
 
-Kenn Benin's portfolio site — Front-End & WordPress Developer / AI Automation.
+Kenn Benin's portfolio site — IT Support Specialist / Systems & Network Administration, with a web infrastructure background.
 
 ## Deploy to GitHub Pages (kbenin.github.io)
 
