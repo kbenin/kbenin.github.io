@@ -313,6 +313,76 @@
       <div class="section-head">
         <p class="kicker kicker-light">05 &mdash; Technical Projects</p>
         <h2 class="light">Self-hosted services &amp; automation lab.</h2>
+        <p class="flow-intro">Two pipelines running on the same Docker + home-lab setup: an AI assistant with document ingestion, and a job-aggregation scraper.</p>
+      </div>
+
+      <div class="flow-diagram" role="img" aria-label="Diagram of the self-hosted automation lab. Top pipeline: Telegram sends a message via webhook to n8n, which sends a prompt to a locally-run Ollama and Llama 3.2 model in Docker and receives a completion back, then replies to Telegram; n8n also writes ingested documents to local storage. Bottom pipeline: a Python scraper pulls job listings from multiple sources, parses them through a matching engine, and outputs aggregated job matches.">
+        <svg viewBox="0 0 980 325" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="flowArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path class="flow-arrowhead" d="M0,0 L10,5 L0,10 z"/>
+            </marker>
+            <marker id="flowArrowReturn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path class="flow-arrowhead-return" d="M0,0 L10,5 L0,10 z"/>
+            </marker>
+          </defs>
+
+          <text class="flow-lane-label" x="20" y="20">Self-hosted AI assistant</text>
+
+          <rect class="flow-box" x="20" y="40" width="150" height="64" rx="6"/>
+          <text class="flow-title" x="95" y="64" text-anchor="middle">Telegram</text>
+          <text class="flow-sub" x="95" y="82" text-anchor="middle">chat front-end</text>
+
+          <rect class="flow-box" x="260" y="40" width="150" height="64" rx="6"/>
+          <text class="flow-title" x="335" y="64" text-anchor="middle">n8n</text>
+          <text class="flow-sub" x="335" y="82" text-anchor="middle">workflow engine</text>
+
+          <rect class="flow-box flow-box-accent" x="500" y="40" width="220" height="64" rx="6"/>
+          <text class="flow-title" x="610" y="64" text-anchor="middle">Ollama &middot; Llama 3.2</text>
+          <text class="flow-sub" x="610" y="82" text-anchor="middle">local inference (Docker)</text>
+
+          <path class="flow-wire" marker-end="url(#flowArrow)" d="M170,62 L260,62"/>
+          <text class="flow-label" x="215" y="55" text-anchor="middle">webhook</text>
+          <path class="flow-wire-return" marker-end="url(#flowArrowReturn)" d="M260,82 L170,82"/>
+          <text class="flow-label" x="215" y="99" text-anchor="middle">reply</text>
+
+          <path class="flow-wire" marker-end="url(#flowArrow)" d="M410,62 L500,62"/>
+          <text class="flow-label" x="455" y="55" text-anchor="middle">prompt</text>
+          <path class="flow-wire-return" marker-end="url(#flowArrowReturn)" d="M500,82 L410,82"/>
+          <text class="flow-label" x="455" y="99" text-anchor="middle">completion</text>
+
+          <path class="flow-wire" marker-end="url(#flowArrow)" d="M335,104 L335,170"/>
+          <text class="flow-label" x="345" y="140" text-anchor="start">ingest</text>
+
+          <rect class="flow-box" x="260" y="170" width="150" height="56" rx="6"/>
+          <text class="flow-title" x="335" y="196" text-anchor="middle">Document Store</text>
+          <text class="flow-sub" x="335" y="212" text-anchor="middle">local ingestion</text>
+
+          <text class="flow-lane-label" x="20" y="240">Job-aggregation tool</text>
+
+          <rect class="flow-box" x="20" y="250" width="150" height="60" rx="6"/>
+          <text class="flow-title" x="95" y="272" text-anchor="middle">Job Sources</text>
+          <text class="flow-sub" x="95" y="288" text-anchor="middle">multiple sites</text>
+
+          <rect class="flow-box" x="260" y="250" width="150" height="60" rx="6"/>
+          <text class="flow-title" x="335" y="272" text-anchor="middle">Python Scraper</text>
+          <text class="flow-sub" x="335" y="288" text-anchor="middle">scrape + parse</text>
+
+          <rect class="flow-box" x="500" y="250" width="220" height="60" rx="6"/>
+          <text class="flow-title" x="610" y="272" text-anchor="middle">Matching Engine</text>
+          <text class="flow-sub" x="610" y="288" text-anchor="middle">custom criteria</text>
+
+          <rect class="flow-box flow-box-accent" x="790" y="250" width="170" height="60" rx="6"/>
+          <text class="flow-title" x="875" y="272" text-anchor="middle">Job Matches</text>
+          <text class="flow-sub" x="875" y="288" text-anchor="middle">aggregated results</text>
+
+          <path class="flow-wire" marker-end="url(#flowArrow)" d="M170,280 L260,280"/>
+          <text class="flow-label" x="215" y="273" text-anchor="middle">scrape</text>
+          <path class="flow-wire" marker-end="url(#flowArrow)" d="M410,280 L500,280"/>
+          <text class="flow-label" x="455" y="273" text-anchor="middle">parse</text>
+          <path class="flow-wire" marker-end="url(#flowArrow)" d="M720,280 L790,280"/>
+          <text class="flow-label" x="755" y="273" text-anchor="middle">match</text>
+        </svg>
       </div>
 
       <div class="project-grid">

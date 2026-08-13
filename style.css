@@ -343,6 +343,32 @@ ul{ margin:0; padding:0; list-style:none; }
 .project-card h3{ font-size: 20px; font-weight:600; color: var(--paper-on-navy); margin-bottom: 10px; }
 .project-card p{ color: var(--soft-on-navy); font-size: 14.5px; margin:0; }
 
+.flow-intro{ color: var(--soft-on-navy); font-size: 15px; margin-top: 16px; max-width: 62ch; }
+
+/* ===========================================================
+   Flow diagram
+=========================================================== */
+.flow-diagram{ margin: 40px 0 8px; }
+.flow-diagram svg{ width:100%; height:auto; display:block; }
+.flow-box{ fill: var(--navy-2); stroke: var(--line-dark); stroke-width:1; }
+.flow-box-accent{ fill: var(--navy-2); stroke: var(--signal); stroke-width:1.4; }
+.flow-title{ fill: var(--paper-on-navy); font-family: var(--font-display); font-size: 14px; font-weight:600; }
+.flow-sub{ fill: var(--soft-on-navy); font-family: var(--font-mono); font-size: 10.5px; }
+.flow-wire{ fill:none; stroke: var(--wire); stroke-width:1.6; }
+.flow-wire-return{ fill:none; stroke: var(--signal-dim); stroke-width:1.6; stroke-dasharray: 4 3; }
+.flow-label{ fill: var(--soft-on-navy); font-family: var(--font-mono); font-size: 10px; letter-spacing:.02em; }
+.flow-lane-label{
+  fill: var(--wire); font-family: var(--font-mono); font-size: 11px;
+  text-transform: uppercase; letter-spacing: .08em;
+}
+.flow-arrowhead{ fill: var(--wire); }
+.flow-arrowhead-return{ fill: var(--signal-dim); }
+
+@media (max-width: 640px){
+  .flow-diagram svg{ min-width: 720px; }
+  .flow-diagram{ overflow-x: auto; }
+}
+
 /* ===========================================================
    Highlights
 =========================================================== */
