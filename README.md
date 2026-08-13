@@ -1,6 +1,10 @@
 # 🌐 Personal Portfolio Website
 
+<<<<<<< HEAD
 Welcome to my personal portfolio website! This project showcases my professional background, technical skills, certifications, and career journey in Information Technology and Web Development.
+=======
+Kenn Benin's portfolio site — IT Support Specialist / Systems & Network Administration, with a web infrastructure background.
+>>>>>>> master
 
 The portfolio was built to ser**v**e as my online resume and professional profile, making it easy for recruiters, hiring managers, and potential clients to learn more about my experience and the work I do.
 
